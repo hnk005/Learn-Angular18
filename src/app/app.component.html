@@ -57,4 +57,12 @@
   </form>
   <p>Car Listing: {{ display }}</p>
   <p>{{ username | uppercase }}</p>
+  <li>
+    Number with "decimal" {{ num | number : "3.0-2"
+    }}<!--lấy phía sau giấu phảy -->
+  </li>
+  <li>Date with "date" {{ birthday | date : "medium" }}</li>
+  <!--lấy thêm thông tin từ date -->
+  <li>Currency with "currency" {{ cost | currency }}</li>
+  <!--hiện thị đơn vị của ví dụ: đ, $-->
 </section>

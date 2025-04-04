@@ -28,8 +28,6 @@ import { CarService } from './services/car/car.service';
     UserComponent,
     ChildComponent,
     CommentsComponent,
-    UpperCasePipe,
-    LowerCasePipe,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -61,6 +59,10 @@ export class AppComponent {
   carService = inject(CarService);
 
   display;
+
+  num = 103.1234;
+  birthday = new Date(2023, 3, 2);
+  cost = 4560.34;
 
   //Cách khác khi sử dụng service
   // constructor(private carService: CarService) {
