@@ -19,4 +19,23 @@
   } @loading {
   <p>Loading comments...</p>
   }
+  <p>Username: {{ username }}</p>
+  <p>Preferred Framework:</p>
+  <ul>
+    <li>
+      Static Image:
+      <img
+        src="/assets/image/logo.svg"
+        alt="Angular logo"
+        style="width: 30px; height: 30px"
+      />
+    </li>
+    <li>
+      Dynamic Image:
+      <img [src]="logoUrl" [alt]="logoAlt" style="width: 30px; height: 30px" />
+    </li>
+  </ul>
+  <div class="image-container">
+    <img ngSrc="/assets/image/faker.jpg" height="600" width="800" priority />
+  </div>
 </section>

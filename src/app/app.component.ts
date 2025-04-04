@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { UserComponent } from './components/user/user.component';
 import { ChildComponent } from './components/child/child.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [UserComponent, ChildComponent, CommentsComponent],
+  imports: [NgOptimizedImage, UserComponent, ChildComponent, CommentsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -24,6 +25,9 @@ export class AppComponent {
   isEditable = true;
   message = '';
   items = new Array();
+  logoUrl = '/assets/image/logo.svg';
+  logoAlt = 'Angular logo';
+  username = 'youngTech';
 
   addItem(item: string) {
     this.items.push(item);
