@@ -2,10 +2,19 @@ import { Component, inject } from '@angular/core';
 import { UserComponent } from './components/user/user.component';
 import { ChildComponent } from './components/child/child.component';
 import { CommentsComponent } from './components/comments/comments.component';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import {
+  CommonModule,
+  LowerCasePipe,
+  NgOptimizedImage,
+  UpperCasePipe,
+} from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CarService } from './services/car/car.service';
 
 @Component({
@@ -19,6 +28,8 @@ import { CarService } from './services/car/car.service';
     UserComponent,
     ChildComponent,
     CommentsComponent,
+    UpperCasePipe,
+    LowerCasePipe,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
