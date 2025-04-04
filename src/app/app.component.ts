@@ -51,6 +51,11 @@ export class AppComponent {
 
   display;
 
+  //Cách khác khi sử dụng service
+  // constructor(private carService: CarService) {
+
+  // }
+
   constructor() {
     this.display = this.carService.getCars().join(' ⭐️ ');
   }
