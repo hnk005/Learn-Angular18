@@ -3,10 +3,18 @@ import { UserComponent } from './components/user/user.component';
 import { ChildComponent } from './components/child/child.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [NgOptimizedImage, UserComponent, ChildComponent, CommentsComponent],
+  imports: [
+    NgOptimizedImage,
+    RouterOutlet,
+    RouterLink,
+    UserComponent,
+    ChildComponent,
+    CommentsComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
