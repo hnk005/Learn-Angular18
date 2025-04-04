@@ -10,4 +10,6 @@
   }
   <div [contentEditable]="isEditable"></div>
   <button (click)="greet()"></button>
+  <app-child (addItemEvent)="addItem($event)"></app-child>
+  <p>🐢 all the way down {{ items.length }}</p> 
 </section>

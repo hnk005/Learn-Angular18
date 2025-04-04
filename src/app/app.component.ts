@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { UserComponent } from './components/user/user.component';
+import { ChildComponent } from "./components/child/child.component";
 
 @Component({
   selector: 'app-root',
-  imports: [UserComponent],
+  imports: [UserComponent, ChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -21,6 +22,11 @@ export class AppComponent {
   ];
   isEditable = true;
   message = '';
+  items = new Array();
+
+  addItem(item: string) {
+    this.items.push(item);
+  }
 
   greet() {
     alert('Hello, there 👋');
