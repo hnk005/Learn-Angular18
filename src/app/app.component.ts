@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 import { UserComponent } from './components/user/user.component';
 import { ChildComponent } from './components/child/child.component';
 import { CommentsComponent } from './components/comments/comments.component';
-import { NgOptimizedImage } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   imports: [
+    CommonModule,
     NgOptimizedImage,
+    ReactiveFormsModule,
     RouterOutlet,
     RouterLink,
     UserComponent,
@@ -37,6 +41,11 @@ export class AppComponent {
   logoAlt = 'Angular logo';
   username = 'youngTech';
 
+  profileForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+  });
+
   addItem(item: string) {
     this.items.push(item);
   }
@@ -48,5 +57,9 @@ export class AppComponent {
   onMouseOver() {
     this.message = 'Way to go 🚀';
     console.log(this.message);
+  }
+
+  handleSubmit() {
+    alert(this.profileForm.value.name + ' | ' + this.profileForm.value.email);
   }
 }
