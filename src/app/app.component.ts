@@ -5,7 +5,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -42,8 +42,8 @@ export class AppComponent {
   username = 'youngTech';
 
   profileForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
 
   addItem(item: string) {

@@ -53,6 +53,6 @@
       >Email
       <input type="email" formControlName="email" />
     </label>
-    <button type="submit">Submit</button>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
   </form>
 </section>
