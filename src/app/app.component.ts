@@ -18,4 +18,5 @@ export class AppComponent {
     { id: 3, name: 'Jessica' },
     { id: 4, name: 'Poornima' },
   ];
+  isEditable = true;
 }
