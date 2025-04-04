@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'myapp';
   city = 'TP.HCM';
   isServerRunning = true;
+
   users = [
     { id: 0, name: 'Sarah' },
     { id: 1, name: 'Amy' },
@@ -19,4 +20,14 @@ export class AppComponent {
     { id: 4, name: 'Poornima' },
   ];
   isEditable = true;
+  message = '';
+
+  greet() {
+    alert('Hello, there 👋');
+  }
+
+  onMouseOver() {
+    this.message = 'Way to go 🚀';
+    console.log(this.message);
+  }
 }

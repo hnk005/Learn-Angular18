@@ -1,4 +1,4 @@
-<section>
+<section (mouseover)="onMouseOver()">
   <h1>Hello {{ city }}, {{ 1 + 1 }}</h1>
   <app-user></app-user>
   @if(isServerRunning) {
@@ -9,4 +9,5 @@
   <p>{{ user.name }}</p>
   }
   <div [contentEditable]="isEditable"></div>
+  <button (click)="greet()"></button>
 </section>
