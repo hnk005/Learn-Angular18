@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserComponent } from './components/user/user.component';
 import { ChildComponent } from './components/child/child.component';
 import { CommentsComponent } from './components/comments/comments.component';
@@ -6,6 +6,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { CarService } from './services/car/car.service';
 
 @Component({
   selector: 'app-root',
@@ -45,6 +46,14 @@ export class AppComponent {
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
+
+  carService = inject(CarService);
+
+  display;
+
+  constructor() {
+    this.display = this.carService.getCars().join(' ⭐️ ');
+  }
 
   addItem(item: string) {
     this.items.push(item);
