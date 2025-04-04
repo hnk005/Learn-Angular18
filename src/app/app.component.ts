@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { UserComponent } from './components/user/user.component';
-import { ChildComponent } from "./components/child/child.component";
+import { ChildComponent } from './components/child/child.component';
+import { CommentsComponent } from './components/comments/comments.component';
 
 @Component({
   selector: 'app-root',
-  imports: [UserComponent, ChildComponent],
+  imports: [UserComponent, ChildComponent, CommentsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
